@@ -1,0 +1,33 @@
+{
+  "name": "mirador-proxy",
+  "version": "0.1.0",
+  "description": "A programming interface to Mirador",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start --singleRun",
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && GIT_DESC=$(git describe --long --always) webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigamorph/mirador-proxy.git"
+  },
+  "keywords": [
+    "IIIF",
+    "Mirador"
+  ],
+  "author": "Seong-June Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigamorph/mirador-proxy/issues"
+  },
+  "homepage": "https://github.com/gigamorph/mirador-proxy#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "karma": "^1.7.1",
+    "webpack": "^3.8.1"
+  }
+}
