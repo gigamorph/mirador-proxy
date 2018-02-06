@@ -19,6 +19,10 @@ export default class WindowProxy {
     return this.window.manifest;
   }
 
+  getManifestUri() {
+    return this.window.manifest.uri;
+  }
+
   getCurrentCanvasId() {
     return this.window.canvasID;
   }

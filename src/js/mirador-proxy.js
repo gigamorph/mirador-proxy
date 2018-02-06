@@ -65,4 +65,21 @@ export default class MiradorProxy {
   unmarkEventToBeIgnored(eventName) {
     this._ignoredEvents.delete(eventName);
   }
+
+  addWindow(params) {
+    const workspace = this.getWorkspaceProxy().getWorkspace();
+    let emptySlot = workspace.getAvailableSlot();
+
+    if (!emptySlot) {
+      const slots = workspace.slots;
+      const baseSlot = slots[slots.length-1];
+      this.publish('SPLIT_RIGHT', baseSlot);
+    }
+
+    const windowConfig = {
+      loadedManifest: params.manifestId,
+      canvasID: params.canvasId
+    };
+    this.publish('ADD_WINDOW', windowConfig);
+  }
 }
